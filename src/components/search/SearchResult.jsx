@@ -1,6 +1,5 @@
 import Loading from "../shared/Loading";
 import MediaCard from "../media/MediaCard";
-import Pagenation from "../pagination/Pagination";
 import SearchNotFound from "./SearchNotFound";
 import Error from "../shared/Error";
 

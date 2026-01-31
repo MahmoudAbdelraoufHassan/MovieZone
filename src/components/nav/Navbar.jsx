@@ -3,8 +3,6 @@ import NavbarSearch from "./NavbarSearch";
 import { useEffect, useState } from "react";
 import NavbarSearchList from "./NavbarSearchList";
 import { BASE_URL, options } from "../../constants";
-import { Link, NavLink } from "react-router-dom";
-import CategoriesDropdown from "../filters/CategoriesDropdown";
 import Theme from "../shared/Theme";
 import NavMenu from "./NavMenu";
 import Logo from "../shared/Logo";
@@ -13,7 +11,6 @@ function Navbar() {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [theme, toggleTheme] = Theme();
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isSearchActive, setSearchActive] = useState(false);
@@ -54,11 +51,6 @@ function Navbar() {
 
     return () => removeEventListener("resize", closeSearch);
   }, [isSearchActive]);
-
-  // const handleDropdown = () => {
-  //   setIsDropdownOpen((prev) => !prev);
-  //   if (isDropdownOpen) setQuery("");
-  // };
 
   useEffect(() => {
     if (!query) return;
@@ -103,6 +95,7 @@ function Navbar() {
           >
             {theme === "dark" ? <Moon color="#ffff" /> : <Sun color="#ffff" />}
           </button>
+
           <button
             onClick={menuToggler}
             className={`cursor-pointer  p-2 rounded-full ${isMenuActive ? "bg-red-600" : "bg-white/20"} flex lg:hidden duration-300`}

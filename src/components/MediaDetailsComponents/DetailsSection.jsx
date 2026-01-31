@@ -14,34 +14,6 @@ function DetailsSection({ media, credits, mediaType = "movie" }) {
     return `${hours}h ${mins}m`;
   };
 
-  // const MovieRealeseState = (date) => {
-  //   const currentDate = new Date();
-  //   const releasedDate = new Date(date);
-  //   const diffInMilliseconds = releasedDate - currentDate;
-  //   const millisecondsPerDay = 1000 * 60 * 60 * 24;
-
-  //   // Use Math.floor() or Math.round() for a whole number of days
-  //   const diffInDays = Math.floor(diffInMilliseconds / millisecondsPerDay);
-  //   if (mediaType === "movie") {
-  //     if (diffInDays > 0) {
-  //       return "Coming Soon";
-  //     } else if (diffInDays === 0) {
-  //       return "Just Released";
-  //     } else {
-  //       return "Released";
-  //     }
-  //   }
-  //   if (mediaType === "tv") {
-  //     if (diffInDays > 0) {
-  //       return "Coming Soon";
-  //     } else if (diffInDays === 0) {
-  //       return "Just Released";
-  //     } else {
-  //       return "All Episodes Available";
-  //     }
-  //   }
-  // };
-
   const directors = credits
     ?.filter((crew) => crew.job.includes("Direct"))
     .map((d) => d.name)

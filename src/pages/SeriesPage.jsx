@@ -1,5 +1,4 @@
 import MediaSectionHeader from "../components/media/MediaSectionHeader";
-
 import SearchResult from "../components/search/SearchResult";
 import Pagenation from "../components/pagination/Pagination";
 import useMediaFilterHook from "../hooks/useMediaFilterHook";

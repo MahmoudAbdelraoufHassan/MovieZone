@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { Swiper } from "swiper/react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import { Autoplay } from "swiper/modules";
 
-function MediaSwiper({ children, results, arrow = "", style = "top-[35%]" }) {
-  const [index, setIndex] = useState(0);
-
+function MediaSwiper({ children, arrow = "", style = "top-[35%]" }) {
   return (
     <div className="relative">
       <div
@@ -30,27 +27,22 @@ function MediaSwiper({ children, results, arrow = "", style = "top-[35%]" }) {
         speed={1000}
         draggable
         breakpoints={{
-          // when window width is >= 320px
           420: {
             slidesPerView: 1,
             slidesPerGroup: 1,
           },
-          // when window width is >= 480px
           480: {
             slidesPerView: 2,
             slidesPerGroup: 2,
           },
-          // when window width is >= 768px
           768: {
             slidesPerView: 3,
             slidesPerGroup: 3,
           },
-          // when window width is >= 1024px
           1024: {
             slidesPerView: 4,
             slidesPerGroup: 4,
           },
-          // when window width is >= 1280px (large screens)
           1280: {
             slidesPerView: 5,
             slidesPerGroup: 5,
@@ -64,9 +56,6 @@ function MediaSwiper({ children, results, arrow = "", style = "top-[35%]" }) {
           swiper.el.addEventListener("mouseleave", () => {
             swiper.autoplay?.start();
           });
-        }}
-        onSlideChange={(e) => {
-          setIndex(e.realIndex);
         }}
       >
         {children}

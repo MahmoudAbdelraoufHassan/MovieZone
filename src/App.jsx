@@ -5,6 +5,7 @@ import Movies from "./pages/MoviesPage";
 import Series from "./pages/SeriesPage";
 import MovieDetail from "./pages/MovieDetailPage";
 import SeriesDetail from "./pages/SeriesDetailPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="series" element={<Series />} />
           <Route path="movies/:id" element={<MovieDetail />} />
           <Route path="series/:id" element={<SeriesDetail />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

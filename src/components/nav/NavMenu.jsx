@@ -43,21 +43,6 @@ function NavMenu({ isMenuActive, onToggleMenu = null }) {
             Series
           </NavLink>
         </li>
-        {/* <li
-            className={`flex items-center gap-1 cursor-pointer duration-300 ${
-              isDropdownOpen ? "text-red-500" : ""
-            }`}
-            onClick={handleDropdown}
-          >
-            <span>Genres</span>
-            <span
-              className={`py-1 duration-300 ${
-                isDropdownOpen ? "rotate-180" : ""
-              }`}
-            >
-              <ChevronDown color={isDropdownOpen ? "red" : "#fff"} size={16} />
-            </span>
-          </li> */}
       </ul>
     );
 

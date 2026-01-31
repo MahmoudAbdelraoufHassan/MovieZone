@@ -1,4 +1,3 @@
-import { IMAGE_URL } from "../constants";
 import Loading from "../components/shared/Loading";
 import Error from "../components/shared/Error";
 import useFetchData from "../useFetchData";
