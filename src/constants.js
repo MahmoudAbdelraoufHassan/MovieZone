@@ -1,4 +1,4 @@
-const KEY = ""
+const KEY = import.meta.env.MTDB_KEY;
 const BASE_URL = "https://api.themoviedb.org/3/";
 const IMAGE_URL = `https://image.tmdb.org/t/p/`;
 
