@@ -22,8 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.env
 # Components
 src/components/filters/CategoriesDropdown.jsx
 src/components/home/SectionsBar.jsx
 # constants
-src/constants.js

@@ -2,10 +2,10 @@ import Loading from "../components/shared/Loading";
 import Error from "../components/shared/Error";
 import useFetchData from "../useFetchData";
 import { useParams } from "react-router";
-import DetailsSection from "../components/MediaDetailsComponents/DetailsSection";
-import MediaSection from "../components/MediaDetailsComponents/MediaSection";
-import CastList from "../components/MediaDetailsComponents/CastList";
-import VideosList from "../components/MediaDetailsComponents/VideosList";
+import DetailsSection from "../components/MediaDetails/DetailsSection";
+import MediaSection from "../components/MediaDetails/MediaSection";
+import CastList from "../components/MediaDetails/CastList";
+import VideosList from "../components/MediaDetails/VideosList";
 import { useEffect, useState } from "react";
 import { SwiperSlide } from "swiper/react";
 import MediaSwiper from "../components/media/MediaSwiper";
@@ -21,6 +21,14 @@ function MovieDetail() {
   const togglePopup = () => {
     setIsPopUpOpen((is) => !is);
   };
+
+  useEffect(() => {
+    if (movie.title) {
+      document.title = movie.title;
+    } else {
+      document.title = "Movie Zone";
+    }
+  }, [movie]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
