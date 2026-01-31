@@ -1,6 +1,6 @@
 import { Sun, Menu, Moon, X } from "lucide-react";
 import NavbarSearch from "./NavbarSearch";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import NavbarSearchList from "./NavbarSearchList";
 import { BASE_URL, options } from "../../constants";
 import Theme from "../shared/Theme";
@@ -42,15 +42,20 @@ function Navbar() {
   }, [isSearchActive]);
 
   useEffect(() => {
-    function closeSearch() {
-      setSearchActive(false);
-      setQuery("");
+    const prevWidth = { current: window.innerWidth };
+
+    function handleResize() {
+      if (window.innerWidth !== prevWidth.current) {
+        prevWidth.current = window.innerWidth;
+        setSearchActive(false);
+        setQuery("");
+      }
     }
 
-    window.addEventListener("resize", closeSearch);
+    window.addEventListener("resize", handleResize);
 
-    return () => removeEventListener("resize", closeSearch);
-  }, [isSearchActive]);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (!query) return;
