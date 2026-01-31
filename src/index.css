@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-family-1: "Outfit", sans-serif;
+  --font-family-2: "BBH Bogle", sans-serif;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+
+.section__title {
+  @apply capitalize text-4xl mb-7;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-entrance {
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.landing .swiper-slide {
+  transform: scale(0.8);
+  filter: blur(2px) brightness(0.5);
+  transition: 0.3s;
+}
+.landing .swiper-slide.swiper-slide-active {
+  transform: scale(1.1);
+  filter: brightness(1);
+  transition: 0.3s;
+}
+.landing .swiper-slide-prev,
+.landing .swiper-slide-next {
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
+.landing .swiper-slide.swiper-slide-active img {
+  border: 2px solid red;
+}
+
+/* loader 1 */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid red;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* loader 1 */
+/*scrollBar */
+.scrollBar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark .scrollBar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+.scrollBar::-webkit-scrollbar-thumb {
+  background: rgba(243, 4, 4, 0.782);
+  border-radius: 10px;
+}
+
+/* search scrollBar */
+/* select options */
