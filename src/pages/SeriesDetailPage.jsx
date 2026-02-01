@@ -10,6 +10,7 @@ import VideosList from "../components/MediaDetails/VideosList";
 import CastList from "../components/MediaDetails/CastList";
 import MediaCard from "../components/media/MediaCard";
 import { SwiperSlide } from "swiper/react";
+import VideosPopup from "../components/media/VideosPopup";
 function SeriesDetail() {
   const { id } = useParams();
   const { state } = useFetchData(`tv`, id);
