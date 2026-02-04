@@ -18,6 +18,7 @@ function Navbar() {
   const menuToggler = () => {
     setIsMenuActive((isActive) => !isActive);
     setSearchActive(false);
+    setQuery("");
   };
   const searchToggler = () => {
     setSearchActive((isActive) => !isActive);
